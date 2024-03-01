@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru');
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
+header{
+    margin-top: 10px;
+    /*margin-bottom: 20px;*/
+    padding: 5px;
+    color: #077ff0;
+    /*background-color:#1885F2;*/
+}
+
+hr{
+    border-width: 3px;
+    border-color:#077ff0;
+    margin: 10px 0;
+}
+
+h1{
+    font-size: 40px;
+    /*font-weight: bold;*/
+    margin: 10;
+    font-family: 'Luckiest Guy', cursive;
+    /*color: #077ff0;*/
+}
+body{
+    /*background-color: #f0f0f0;*/
+    padding: 10px;
+}
+
+.show{
+    position: relative;
+    width: 400px;
+}
+.show li img{
+    width: 100%;
+    height: 100%;
+}
+
+.cd-text-font{
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 32px;
+    vertical-align: middle;
+    text-align: center;
+}
+@media only screen and (min-width: 1500px) {
+	.cd-text-font {
+	font-size: 38px;
+    vertical-align: middle;
+    text-align: center;
+	}
+}
+
+/* タブレット用のCSS */
+@media only screen and (min-width : 1024px) and (max-width : 1200px) {
+	.cd-text-font {
+	font-size: 30px;
+    vertical-align: middle;
+    text-align: center;
+	}
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1000px) {
+	.cd-text-font {
+	font-size: 22px;
+    vertical-align: middle;
+    text-align: center;
+	}
+}
+
+/* スマホ用のCSS */
+@media only screen and (max-width: 479px) {
+	.cd-text-font {
+    font-size: 15px;
+    vertical-align: middle;
+    text-align: center;
+	}
+}
+
+
+.cover-img {
+	height: 600px;
+	display: table;
+	width: 700px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* ワイドスクリーン用のCSS */
+@media only screen and (min-width: 1500px) {
+	.cover-img {
+		height: 800px;
+	}
+}
+
+/* タブレット用のCSS */
+@media only screen and (min-width : 768px) and (max-width : 1200px) {
+	.cover-img {
+		height: 500px;
+	}
+}
+
+/* スマホ用のCSS */
+@media only screen and (max-width: 479px) {
+	.cover-img {
+		height: 300px;
+	}
+}
+
+.cover-text {
+	display: table-cell;
+	vertical-align: middle;
+  text-align: center;
+}

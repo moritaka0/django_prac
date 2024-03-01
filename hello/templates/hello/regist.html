@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE <!DOCTYPE html>
+<html lamng="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" type="image/png" href="{% static 'hello/img/goodjob-header32px.png' %}">    
+    <!-- Bootstrap読み込み -->
+   <link rel="stylesheet" type="text/css" href="{% static 'hello/bootstrap/css/bootstrap.css' %}"/>
+    <!-- JQuery読み込み -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+    <!-- style.cssの読み込み -->
+   <link rel="stylesheet" type="text/css" href="{% static 'hello/css/style.css' %}"/>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+
+    <!-- style.cssの読み込み -->
+   <link rel="stylesheet" type="text/css" href="{% static 'hello/css/style.css' %}"　/>
+</head>
+<body>
+<div class="container">
+   <div class="row">
+        <div class="col-sm-6  text-primary">
+        <header>
+            <h1>入力完了です</h1>
+        </header>
+       </div><!--col-->
+   </div><!--row-->
+</div>   
+   <hr>
+<div class="container">
+   <div class="row">
+       <div class="col-sm-6">
+       <a href="{%url 'index'%}">TOPに戻る</a>
+       </div>
+   </div>
+</div>
+       
+<hr>
+<div class="container">
+    <div class="row">
+    <div class="col-sm-8 col-offset-2">
+        <footer>
+            <p>&copy; Takahiro Mori</p>
+        </footer>
+    </div><!--col-->    
+    </div><!--row-->
+<div>
+</body>
+
+</html>

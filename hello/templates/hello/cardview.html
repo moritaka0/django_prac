@@ -1,0 +1,103 @@
+{% load staticfiles %}
+<!DOCTYPE <!DOCTYPE html>
+<html lamng="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{% static 'hello/img/goodjob-header32px.png' %}">
+    <!-- Bootstrap読み込み -->
+   <link rel="stylesheet" type="text/css" href="{% static 'hello/bootstrap/css/bootstrap.css' %}"/>
+   <link rel="stylesheet" type="text/css" href="{% static 'hello/imagepicker/image-picker.css' %}"/>
+    <!-- JQuery読み込み -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+   <script src="{% static 'hello/imagepicker/image-picker.min.js' %}" type="text/javascript"></script>
+    <!-- style.cssの読み込み -->
+   <link rel="stylesheet" type="text/css" href="{% static 'hello/css/style.css' %}"/>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6  text-primary">
+            <header>
+            <h1>プレビュー</h1>
+            </header>
+       </div><!--col-->
+   </div><!--row-->
+</div>
+   <hr>
+<div class="container">
+   <div class="row">
+    <div class="col-sm-8 col-offset-2">
+        <div class="form-group">
+        <div class="card w-100" id="target">
+            <div class="card-header text-left">
+                <span>{{fromPerson}}  ▶︎  {{toPerson}}</span>
+            </div>
+                <img class="card-img-bottom" src={{cardpath}}>
+                <div class="card-img-overlay text-center cd-text-font">
+                    <p class="card-text" >
+                        {{message}}
+                    </p>
+                </div>
+        </div><!--card-->
+        </div>
+    </div>
+    </div>
+ <!--   
+ 	<div class="row">
+		<div class="col-sm-6 col-offset-2 cover-img" style="background-image:url({{cardpath}});">
+			<div class="cover-text text-center">
+				<p style="color: #000;">ここがテキストですよ！！</p>
+			</div>
+		</div>
+	</div>
+-->	
+	<div class="row">
+    <div class="col-sm-8  col-offset-2">
+    <form action="{%url 'regist'%}" method="post">
+    {% csrf_token %}
+
+       <div class="form-group">
+           <input type="hidden" name="frPerson" value="{{fromPerson}}" />
+           <input type="hidden" name="toPerson" value="{{toPerson}}" />
+           <input type="hidden" name="cardpath" value="{{cardpath}}" />
+           <input type="hidden" name="message" value="{{message}}" />
+           <!--<input type="hidden" name="carddata" id="carddata" value="" />-->
+           <button type="submit" class="btn btn-primary btn-lg">確定する</button>
+           <a href="{%url 'card'%}" class="btn btn-secondary btn-lg">書き直す</a>
+       </div>
+   </form>
+   </div>
+   </div>
+</div>   
+    <hr>        
+<div class="container">
+    <div class="row">
+    <div class="col-sm-8 col-offset-2">
+        <footer>
+            <p>&copy; Takahiro Mori</p>
+        </footer>
+    </div><!--col-->    
+    </div><!--row-->
+</div><!--continer-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<!--
+<script>
+//GoodJobカードのHTMLソースを画像に変換しBase64エンコードした文字列をhidden項目にセット
+window.onload = function(){
+  html2canvas(document.getElementById("target"),{
+    onrendered: function(canvas){
+      var imgData = canvas.toDataURL();
+      document.getElementById("carddata").value = imgData;
+    }
+  });
+}
+</script>
+-->
+</body>
+</html>
